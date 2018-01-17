@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+cvmessage.html
+-->
+<html>
+    <head>
+        <title>CV Message</title>
+    </head>
+    <body>
+        <p><a href="index.html">Login</a></p>
+        <hr>
+        <h1>Bonjour</h1>
+        <div>Thank you for you message.</div>
+        <p></p>
+        <div><img src="images/intro.jpg" alt="CV info"></div>
+        <p></p>
+		<hr>
+		<div>
+        <?php
+        echo "<br><strong>Testing: </strong>";
+		if (isset($_REQUEST["name"]))
+		{
+		    $date = date('Y/m/d H:i:s');
+		    $user = filter_var($_REQUEST["email"], FILTER_VALIDATE_EMAIL);
+		    echo "$user <br>";
+			$name = filter_var($_REQUEST["name"], FILTER_SANITIZE_STRING);
+			$message = filter_var($_REQUEST["message"], FILTER_SANITIZE_STRING);
+			$newMessage = array($user, $name, $message, $date);
+			print_r($newMessage);
+			echo "<br>";
+			$mstr = implode("###", $newMessage);
+			echo "<br> $mstr <br>";
+			$filename = "cvtest.txt";
+			$cvf = fopen($filename, "a");
+			fputs($cvf, "\n");
+			fputs($cvf, $mstr);
+			fputs($cvf, "\n$$$");
+			fclose($cvf);
+		    echo "<p><strong>Done.</strong></p>";
+		}
+        ?>
+        </div>
+		<p></p>
+    </body>
+</html>
