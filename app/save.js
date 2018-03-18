@@ -65,10 +65,10 @@ function addVisitor(name2, email2, message2)
 {
     
 	//alert("10, Visitor...");
-	var idlist1 = '5a4b3c4cbe0188ca9c0b2059';
-    var token1 = 'ae4a73cb0e40c46f6e642f5f7429394534b35e3b5a4c7c21438e5389eec20497';
+	var idlist1 = '';
+    var token1 = '';
     ///////////////////////////////////////////////////////////////////////////////////
-    //var key1 = '6eb508bda626ff893db446eff50d0066';
+    //var key1 = '';
     //
     //<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     //<script src="https://api.trello.com/1/client.js?key=key1"></script>
